@@ -15,5 +15,16 @@ router.get("/", async (req, res, next) => {
     }
 })
 
+router.post("/", async (req, res, next) => {
+    try {
+        const {name, description} = req.body
+        const { id } = req.params
+        const resources = await model.addResource(id, {name, description})
+        res.json(resources)
+    } catch (err) {
+        next(err)
+    }
+})
+
 
 module.exports = router
