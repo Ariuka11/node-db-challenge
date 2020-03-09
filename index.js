@@ -11,7 +11,7 @@ server.get("/", (req, res) => {
     res.send(`<h2>Sprint Challenge DB</h2>`)
 })
 
-server.use(port, () => {
+server.listen(port, () => {
     console.log(`Listening on ${port}...`)
 })
 
