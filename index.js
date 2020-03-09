@@ -1,9 +1,11 @@
 const express = require("express")
+const projectRouter = require('./router/projects-router')
 
 const server = express()
 const port = 4000
 
 server.use(express.json())
+server.use("/api/projects", projectRouter)
 
 server.get("/", (req, res) => {
     res.send(`<h2>Sprint Challenge DB</h2>`)
